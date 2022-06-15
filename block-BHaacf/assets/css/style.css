@@ -1,0 +1,594 @@
+/***
+    The new CSS reset - version 1.6.0 (last updated 29.4.2022)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+ *:where(:not(html, iframe, canvas, img, svg, video, table, tr, td, caption):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+    cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+    list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+    max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+    border-collapse: collapse;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+    white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+    -webkit-appearance: revert;
+    appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+    color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+    display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly. */
+:where([contenteditable]) {
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+    -webkit-user-drag: element;
+}
+
+
+
+/* custom styles */
+body{
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+}
+
+
+/* hero and header styles */
+
+.container{
+    width: 65%;
+    margin: 0 auto;
+}
+.container-2{
+    width: 80%;
+    margin: 0 auto;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+.middle{
+    display: flex;
+    align-items: center;
+}
+.center-o{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrap{
+    flex-wrap: wrap;
+}
+.hero{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+    background-color: rgba(1, 18, 31, 0.6);
+}
+.header{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgba(91, 93, 94, 0.3);
+    height: 80px;
+    padding: 20px 0;
+}
+.header-div{
+    height: 100%;
+}
+.gym-name{
+    width: 40%;
+    text-align: left;
+}
+.gym-name a{
+    font-weight: 900;
+    font-size: 36px;
+    color: #ffffff;
+    text-transform: uppercase;
+    word-spacing: -3px;
+    letter-spacing: -1px;
+}
+.gym-name a:hover{
+    color: #E5533A;
+}
+.gym-name a span:hover{
+    color: #ffffff;
+}
+.gym-name span{
+    color: #E5533A;
+}
+.nav-bar{
+    width: 55%;
+}
+.nav-bar a{
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 16px;
+}
+.nav-bar a:hover{
+    color: #E5533A;
+}
+.nav-btn{
+    height: fit-content;
+    width: fit-content;
+    padding: 12px 22px;
+    background-color: #E5533A;
+}
+.nav-btn a:hover{
+    color: #ffffff;
+}
+.gymvideo{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+.hero-heading{
+    position: absolute; 
+    left: 0;
+    right: 0;
+    top: 40vh;
+    margin: auto; 
+    width: 60%;
+    text-align: center;
+}
+.hero-s-heading{
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 800;
+    color: #ffffff;
+}
+.hero-l-heading{
+    text-transform: uppercase;
+    font-size: 72px;
+    font-weight: 900;
+    color: #ffffff;
+}
+.hero-l-heading span{
+    color: #E5533A;
+}
+.member-btn{
+    margin-top: 32px;
+}
+.member-btn a{
+    height: fit-content;
+    width: fit-content;
+    padding: 12px 22px;
+    background-color: #E5533A;
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.gym-program{
+    padding: 80px 0;
+}
+.head-part{
+    text-align: center;
+}
+.program-heading{
+    text-transform: uppercase;
+    font-size: 32px;
+    font-weight: 700;
+    color: #000000;
+    padding: 8px 0;
+}
+.program-heading span{
+    color: #E5533A;
+}
+.program-para{
+    font-size: 16px;
+    color: rgb(147, 147, 148);
+    font-weight: 500;
+    width: 80%;
+    margin: 22px auto;
+    line-height: 1.7;
+}
+.program-box{
+    padding: 60px 32px;
+}
+.program-list{
+    width: 49%;
+    height: 120px;
+    margin: 18px 0;
+}
+.program-list-icon{
+    width: 100px;
+    height: 100%;
+}
+.program-list-icon img{
+    width: 100px;
+    height: 100px;
+}
+.program-list-para{
+    width: calc(100% - 120px);
+    height: 100%;
+}
+.program-list-para h2{
+    font-size: 22px;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: #000000;
+}
+.program-list-para p{
+    color: rgb(147, 147, 148);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.7;
+    margin: 6px 0;
+}
+.program-btn{
+    color: #E5533A;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 14px;
+}
+.quote-section{
+    background: url(../image-n-video/cta-bg.jpg) no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 380px;
+}
+.quote-div{
+    text-align: center;
+    color: #ffffff;
+    height: 100%;
+    padding: 100px 60px 0 60px;
+}
+.quote-div h2{
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+.quote-div h2 span{
+    color: #E5533A;
+}
+.quote-div p{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-top: 12px;
+}
+.quote-btn{
+    display: block;
+    margin: 32px auto;
+}
+.quote-btn a{
+    height: fit-content;
+    width: fit-content;
+    padding: 12px 22px;
+    background-color: #E5533A;
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.gym-class{
+    padding: 120px 0;
+}
+.gym-class-h-part{
+    text-align: center;
+}
+.gym-class-heading{
+    text-transform: uppercase;
+    font-size: 32px;
+    font-weight: 700;
+    color: #000000;
+    padding: 8px 0;
+}
+.gym-class-h-part span{
+    color: #E5533A;
+}
+.gym-class-para{
+    font-size: 14px;
+    color: rgb(147, 147, 148);
+    font-weight: 500;
+    width: 60%;
+    margin: 22px auto;
+    line-height: 1.7;
+}
+
+.gym-training-box{
+    height: 760px;
+    padding: 80px 0;
+}
+
+.gym-training-p{
+    width: 32%;
+    flex-direction: column;
+}
+.gym-training-det{
+    width: 63%;
+}
+.training-img img{
+    width: 100%;
+    height: 310px;
+    border-radius: 6px;
+}
+.t-list-box{
+    height: 100px;
+    width: 100%;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 24px;
+}
+.t-list-btn{
+    width: 90%;
+    margin: 0 auto;
+    background-color: #E5533A;
+    padding: 20px 32px;
+    text-transform: capitalize;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 6px;
+}
+.t-heading{
+    text-transform: capitalize;
+    font-size: 22px;
+    font-weight: 500;
+    color: #000000;
+    width: 80%;
+}
+.t-heading a:hover{
+    color: #E5533A;
+}
+.t-det-heading{
+    text-transform: capitalize;
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    margin: 20px 0;
+}
+.gym-training-det p{
+    color: rgb(147, 147, 148);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.7;
+}
+.t-det-btn{
+    padding: 12px 32px;
+    background-color: #E5533A;
+    color: #ffffff;
+    margin-top: 24px;
+    text-transform: uppercase;
+}
+.cls-schedule{
+    height: 1031px;
+    background: url(../image-n-video/schedule-bg.jpg) no-repeat;
+    background-size: cover;
+}
+.cls-div{
+    padding: 80px 0;
+}
+.cls-s-head-part{
+    padding: 40px 0;
+    text-align: center;
+}
+.cls-s-heading{
+    text-transform: uppercase;
+    font-size: 32px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 24px;
+}
+.cls-s-head-part span{
+    color: #E5533A;
+}
+.cls-s-para{
+    color: rgb(147, 147, 148);
+    font-size: 14px;
+    line-height: 1.7;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 22px;
+}
+table{
+    width: 85%;
+    margin: 0 auto;
+}
+caption{
+    text-transform: capitalize;
+    font-size: 18px;
+    margin: 40px 0;
+    color: #ffffff;
+    word-spacing: 3px;
+}
+caption span{
+    color: #E5533A;
+}
+
+td, th{
+    border: 1px solid rgb(147, 147, 148);
+    padding: 36px 44px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+}
+.expert-trainers-sec{
+    padding: 80px 0;
+}
+.expert-t-head-part{
+    padding: 40px 0;
+    text-align: center;
+}
+.expert-t-heading{
+    text-transform: uppercase;
+    font-size: 32px;
+    font-weight: 800;
+    color: #000000;
+    margin-bottom: 24px;
+}
+.expert-t-head-part span{
+    color: #E5533A;
+}
+.expert-t-para{
+    color: rgb(147, 147, 148);
+    font-size: 14px;
+    line-height: 1.7;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 22px;
+}
+.e-trainer-box{
+    padding: 60px 0;
+}
+.t-box00{
+    width: 31%;
+    height: 550px;
+    padding: 40px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 8px;
+}
+.t-box00 span{
+    color: #E5533A;
+    font-size: 12px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.t-box00 h2{
+    font-size: 20px;
+    color: #000000;
+    font-weight: 600;
+    margin-top: 8px;
+}
+.t-box00 p{
+    color: rgb(147, 147, 148);
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 12px;
+    line-height: 1.7;
+}
+.icon-box{
+    width: 40%;
+    margin-top: 16px;
+}
+.icon-box i:hover{
+    color: #E5533A;
+}
+.map-n-contact{
+    padding-top: 20px;
+}
+.map-div{
+    width: 50%;
+    height: 555px;
+}
+.form-div{
+    width: 50%;
+    height: 555px;
+    background: url(../image-n-video/contact-bg.jpg) no-repeat;
+    background-size: cover;
+    padding: 65px;
+}
+.form-box{
+    width: 100%;
+    height: 425px;
+    background-color: #ffffff;
+    border-radius: 6px;
+}
+.form-box form{
+    width: 100%;
+    height: 100%;
+    padding: 32px;
+}
+.f-name, .f-mail{
+    width: 48%;
+    border: 1px solid rgb(223, 223, 224);
+    color: rgb(194, 194, 196);
+    font-size: 14px;
+    padding: 6px 12px;
+}
+.f-name:hover, .f-message:hover, .f-mail:hover, .f-sub:hover{
+    border: 1px solid #E5533A;
+}
+.f-sub{
+    width: 100%;
+    border: 1px solid rgb(223, 223, 224);
+    color: rgb(194, 194, 196);
+    font-size: 14px;
+    padding: 6px 12px;
+    margin-top: 22px;
+}
+.f-message{
+    width: 100%;
+    height: 160px;
+    border: 1px solid rgb(223, 223, 224);
+    color: rgb(194, 194, 196);
+    font-size: 14px;
+    padding: 12px;
+    margin-top: 22px;
+}
+.f-btn{
+    margin-top: 22px;
+    padding: 14px 28px;
+    color: #ffffff;
+    background-color: #E5533A;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 300;
+}
+footer{
+    height: 100px;
+}
+footer p{
+    text-transform: capitalize;
+    color: rgb(20, 20, 20);
+    font-size: 12px;
+    font-weight: 300;
+}
